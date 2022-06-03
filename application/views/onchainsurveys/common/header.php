@@ -60,13 +60,62 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+ 
+
+ 
 
 
                         <li class="nav-item"><a class="nav-link" href="page-top:">Connect Wallet</a></li>
                         <li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Surveys</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+
+                        <li class="dropdown nav-item">
+							<a class="nav-link dropdown-toggle" href="javascript:" data-bs-toggle="dropdown" aria-expanded="false" id="survey">Surveys</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						    	<li><a class="dropdown-item" href="<?=base_url("survey/all");?>">All Surveys</a></li>
+						    	<li><a class="dropdown-item" href="<?=base_url("survey/open");?>" id="open_survey">Open Surveys</a></li>
+						    
+							    <?php if(is_login()){?>
+							    	<li><a class="dropdown-item" href="<?=base_url("survey/my_surveys");?>">Something else here</a></li>
+							    <?php } ?>
+
+							    <li><a class="dropdown-item" href="<?=base_url("survey/create");?>">Create Survey</a></li>
+						  </ul>
+						</li>
+
+
+						<?php if(is_login()){?>
+
+						<li class="dropdown nav-item">
+							<a class="nav-link dropdown-toggle" href="javascript:" data-bs-toggle="dropdown" aria-expanded="false" id="profile">Profile</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						    <li><a class="dropdown-item" href="<?=base_url("user");?>"><?php echo $this->session->userdata('user_name'); ?></a></li>
+						    <li><a class="dropdown-item" href="<?=base_url("survey/my_surveys");?>">My Surveys</a></li>
+						    <li><a class="dropdown-item" href="<?=base_url('survey/history');?>">Survey History</a></li>
+						  </ul>
+						</li>
+
+							<?php if(is_superUser()){?>
+								<li class="dropdown nav-item">
+									<a class="nav-link dropdown-toggle" href="javascript:" data-bs-toggle="dropdown" aria-expanded="false" id="admin">Admin</a>
+									<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+								    <li><a class="dropdown-item" href="<?=base_url("user/userlist");?>">User List</a></li>
+								    <li><a class="dropdown-item" href="<?=base_url('survey/approve');?>" id="approve">Approve Surveys</a></li>
+								    <li><a class="dropdown-item" href="<?=base_url('survey/rejected');?>">Rejected Surveys</a></li>
+								  </ul>
+								</li>
+
+							<?php }?>
+
+							<li class="nav-item"><a class="nav-link" href="<?=base_url("user/logout");?>" id="logout">Logout</a></li>
+
+						<?php }else{?>
+
+							<li class="nav-item"><a class="nav-link" href="<?=base_url("user/login");?>" id="login">Login</a></li>
+						<?php } ?> 
+ 
+
+                         
                     </ul>
                 </div>
             </div>
