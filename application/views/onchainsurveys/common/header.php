@@ -47,6 +47,28 @@
 			/*header.masthead{ background: url("assets/img/header-bg-2.jpg"); }*/
 		</style>
 
+		 <style>
+		 	.pages-head{
+		 		padding-top: 6em !important;
+		 		padding-bottom: 2em !important;
+		 	}
+
+		 	/*.page-section{ background: #f4f4f4; }*/
+
+		 	.page-section { padding: 3rem 0; }
+
+		 	a { color: #777; }
+
+		 	.text-primary { color: red !important; }
+
+		 	header.masthead .masthead-heading { font-size: 3.5rem; }
+
+		 	body { background: #252525; color: #777; }
+
+		 	html .bg-color-secondary, html .bg-secondary { background: #292929 !important; }
+		 	.form-control.bg-secondary, .form-control.bg-color-secondary { color: #FFF; }
+		 </style>
+
 
     </head>
     <body id="page-top">
