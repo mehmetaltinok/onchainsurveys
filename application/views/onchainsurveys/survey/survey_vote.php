@@ -94,7 +94,7 @@
 									  			 if($item->is_approved == 1){?>
 										  			<button type="button" class="btn btn-outline-secondary btn-lg" id="finishSurvey" onclick="survey_vote(event);"><i class="fas fa-clipboard-check"></i> Finish Survey</button>
 										  	<?php }else{?>
-										  			<div class="text-primary"> Bu anket henüz onaylanmadığı için oy vermek işlemi yapılamaz. </div>
+										  			<div class="text-primary"> Voting is not possible as this poll has not been approved yet. </div>
 										  	<?php } 
 
 									  	}else{?>
