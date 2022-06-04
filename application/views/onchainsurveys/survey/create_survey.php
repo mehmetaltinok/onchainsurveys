@@ -53,10 +53,7 @@
 				<section class="custom-cards p-relative mb-5 pb-5 z-index-2" >
 					<div class="container">
 						<div class="row">
-
-
-							
-
+ 
 						<!-- create_survey --> 
  						<div class="col-lg-12 " id="create_survey">
 							<div class="card border-0 bg-color-dark rounded-0 z-index-1 p-5  " >
@@ -122,11 +119,11 @@
 												</div>
  
 													<label for="comment">Enter your question</label>
-													<div class="form-group input-group">
+													<div class="form-group input-group mb-3">
 														<textarea class="form-control" rows="2" id="text" name="0[text]" placeholder="Enter your question" maxlength="255"></textarea>
 													</div>
 
-													<div class="form-group">
+													<div class="form-group mb-3">
 														<div class="input-group">
 															<span class="input-group-text">A</span>
 															<input type="text" class="form-control" name="0[options][]" placeholder="Option text" maxlength="255">
@@ -134,7 +131,7 @@
 														</div>
 													</div>
 
-													<div class="form-group">
+													<div class="form-group mb-3">
 														<div class="input-group">
 															<span class="input-group-text">B</span>
 															<input type="text" class="form-control" name="0[options][]" placeholder="Option text" maxlength="255">
@@ -144,7 +141,7 @@
 												 
 	 											
 	 											 
-	 												<div class="form-group">
+	 												<div class="form-group mb-3">
 														<div class="float-end">
 															<button type="button" class="btn btn-outline-secondary btn-sm " id="" onclick="addOption(event,0);"> <i class="fas fa-plus-circle"></i> Add Option</button>
 														</div>

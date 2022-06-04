@@ -21,7 +21,7 @@
 
         const option = document.createElement("div");
         option.className ='form-group';
-        option.innerHTML = `<div class="input-group">
+        option.innerHTML = `<div class="input-group mb-3">
       		<span class="input-group-text"></span>
             <input type="text" class="form-control" name="${counter}[options][]" placeholder="Option text" maxlength="255">
             <button class="btn btn-danger btn-xs" onClick="delOption(event)"><i class="fas fa-times-circle"></i></button>
@@ -195,11 +195,11 @@
         </div>
 
         "<label for="comment">Enter your question</label>
-                <div class="form-group input-group">
+                <div class="form-group input-group mb-3">
                 <textarea class="form-control" rows="2" id="text_${addQuestionBlock.counter}" name="${addQuestionBlock.counter}[text]" placeholder="Enter your question" maxlength="255"></textarea>
                 </div>
         
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <div class="input-group">
                         <span class="input-group-text">A</span>
                         <input type="text" class="form-control" name="${addQuestionBlock.counter}[options][]" placeholder="Option text" maxlength="255">
@@ -207,7 +207,7 @@
                     </div>
                 </div>
         
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <div class="input-group">
                         <span class="input-group-text">B</span>
                         <input type="text" class="form-control" name="${addQuestionBlock.counter}[options][]" placeholder="Option text" maxlength="255">
@@ -215,7 +215,7 @@
                     </div>
                 </div>
         
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <div class="float-end">
                         <button type="button" class="btn btn-outline-secondary btn-sm " id="" onclick="addOption(event,${addQuestionBlock.counter});"> <i class="fas fa-plus-circle"></i> Add Option</button>
                     </div>
