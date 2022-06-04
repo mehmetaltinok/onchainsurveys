@@ -66,7 +66,7 @@
 
 		 	body { background: #252525; color: #777; }
 
-		 	html .bg-color-secondary, html .bg-secondary { background: #292929 !important; }
+		 	html .bg-color-secondary, html .bg-secondary { background-color: #292929 !important; }
 		 	.form-control.bg-secondary, .form-control.bg-color-secondary { color: #FFF; }
 
 		 	html .bg-color-dark, html .bg-dark { background-color: #292929 !important; }
