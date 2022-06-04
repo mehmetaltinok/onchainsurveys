@@ -4,8 +4,8 @@
             <div class="container">
                 <div class="masthead-subheading"></div>
                 <div class="masthead-heading text-uppercase">Onchain Surveys </div>
-                <a class="btn btn-danger btn-xl text-uppercase mb-2" href="<?=base_url("survey/create");?>">Create Survey</a>
-                <a class="btn btn-danger btn-xl text-uppercase mb-2" href="<?=base_url("survey/");?>">All Surveys</a>
+                <a class="btn btn-danger btn-xl text-uppercase mb-2" href="<?=base_url("survey/create#create_survey");?>">Create Survey</a>
+                <a class="btn btn-danger btn-xl text-uppercase mb-2" href="<?=base_url("survey#table-list");?>">All Surveys</a>
             </div>
         </header>
 

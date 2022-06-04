@@ -13,7 +13,7 @@
 		<meta name="author" content="">
 
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/onchainsurveys/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -22,6 +22,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="assets/onchainsurveys/css/styles.css" rel="stylesheet" />
         <link href="assets/onchainsurveys/css/custom.css" rel="stylesheet" />
+
+
 
         <!-- Sweet ALert  -->
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -32,12 +34,12 @@
 			/* anket tablolar */
 			#all_surveys tr:hover,#my_survey tr:hover,#user_list tr:hover { cursor: pointer; }
 			
-			/* anket cevaplama label */
+			/* survey answering label */
 			label.form-check-label:hover {cursor: pointer;}
-			/* anket sonuç seçenekler, harfler */
+			/* survey result options, letters */
 			.letter{ padding: 5px; }
 			.selected-letter{ border: 2px solid red; border-radius: 50px; }
-			/* formlarda zorunlar alanlar * işareti  */
+			/* required fields in forms *  */
 			label.required:after{color: red;}
 			select{
 				background: url('assets/onchainsurveys/img/icons/br_down_white.webp') no-repeat 97% #fff;
@@ -85,26 +87,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
- 
+  	
+  						 
 
- 
-
-
-                        <li class="nav-item"><a class="nav-link" href="page-top:">Connect Wallet</a></li>
+                        <li class="nav-item "><a class="nav-link menu_wallet" href="javascript:" id="menu_wallet" style="padding: 5px 15px;"> <i class="fas fa-wallet"></i>  Connect Wallet</a></li>
                         <li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 
                         <li class="dropdown nav-item">
 							<a class="nav-link dropdown-toggle" href="javascript:" data-bs-toggle="dropdown" aria-expanded="false" id="survey">Surveys</a>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-						    	<li><a class="dropdown-item" href="<?=base_url("survey/all");?>">All Surveys</a></li>
-						    	<li><a class="dropdown-item" href="<?=base_url("survey/open");?>" id="open_survey">Open Surveys</a></li>
+
+							<ul class="dropdown-menu" aria-labelledby="survey">
+						    	<li><a class="dropdown-item" href="<?=base_url("survey/all#table-list");?>">All Surveys</a></li>
+						    	<li><a class="dropdown-item" href="<?=base_url("survey/open#table-list");?>" id="open_survey">Open Surveys</a></li>
 						    
 							    <?php if(is_login()){?>
-							    	<li><a class="dropdown-item" href="<?=base_url("survey/my_surveys");?>">My Surveys</a></li>
+							    	<li><a class="dropdown-item" href="<?=base_url("survey/my_surveys#table-list");?>">My Surveys</a></li>
 							    <?php } ?>
 
-							    <li><a class="dropdown-item" href="<?=base_url("survey/create");?>">Create Survey</a></li>
+							    <li><a class="dropdown-item" href="<?=base_url("survey/create#create_survey");?>">Create Survey</a></li>
 						  </ul>
 						</li>
 
@@ -113,20 +114,21 @@
 
 						<li class="dropdown nav-item">
 							<a class="nav-link dropdown-toggle" href="javascript:" data-bs-toggle="dropdown" aria-expanded="false" id="profile">Profile</a>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-						    <li><a class="dropdown-item" href="<?=base_url("user");?>"><?php echo $this->session->userdata('user_name'); ?></a></li>
-						    <li><a class="dropdown-item" href="<?=base_url("survey/my_surveys");?>">My Surveys</a></li>
-						    <li><a class="dropdown-item" href="<?=base_url('survey/history');?>">Survey History</a></li>
+							
+							<ul class="dropdown-menu" aria-labelledby="profile">
+						    <li><a class="dropdown-item" href="<?=base_url("user#profile");?>"><?php echo $this->session->userdata('user_name'); ?></a></li>
+						    <li><a class="dropdown-item" href="<?=base_url("survey/my_surveys#table-list");?>">My Surveys</a></li>
+						    <li><a class="dropdown-item" href="<?=base_url('survey/history#table-list');?>">Survey History</a></li>
 						  </ul>
 						</li>
 
 							<?php if(is_superUser()){?>
 								<li class="dropdown nav-item">
 									<a class="nav-link dropdown-toggle" href="javascript:" data-bs-toggle="dropdown" aria-expanded="false" id="admin">Admin</a>
-									<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-								    <li><a class="dropdown-item" href="<?=base_url("user/userlist");?>">User List</a></li>
-								    <li><a class="dropdown-item" href="<?=base_url('survey/approve');?>" id="approve">Approve Surveys</a></li>
-								    <li><a class="dropdown-item" href="<?=base_url('survey/rejected');?>">Rejected Surveys</a></li>
+									<ul class="dropdown-menu" aria-labelledby="admin">
+								    <li><a class="dropdown-item" href="<?=base_url("user/userlist#list_table");?>">User List</a></li>
+								    <li><a class="dropdown-item" href="<?=base_url('survey/approve#table-list');?>" id="approve">Approve Surveys</a></li>
+								    <li><a class="dropdown-item" href="<?=base_url('survey/rejected#table-list');?>">Rejected Surveys</a></li>
 								  </ul>
 								</li>
 

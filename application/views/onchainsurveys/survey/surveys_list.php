@@ -95,7 +95,7 @@
  						<div class="col-lg-12" id="all_surveys2">
 							<div class="card border-0 bg-color-dark rounded-0 z-index-1 p-5  " data-appear-animation="maskUp" data-appear-animation-delay="100">
 								<div class="table-responsive">
-									<table role="table" class="table table-hover table_link" id="all_surveys" >
+									<table role="table" class="table table-hover table_link" id="table-list" >
 										<thead role="rowgroup">
 											<tr role="row">
 												<th role="columnheader">

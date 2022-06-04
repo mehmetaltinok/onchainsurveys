@@ -77,12 +77,23 @@ table a:hover { color: #454455; }
 		.table{
 			font-size:14px;
 		}
+
+		.dropdown:hover .dropdown-menu {
+		    display: block;
+		    margin-top: 0; 
+		 }
 	}
 	
 	@media only screen and (min-width:992px) and (max-width:1199px){ /* L */
 		table{
 			font-size:13px;
 		}
+
+		.dropdown:hover .dropdown-menu {
+		    display: block;
+		    margin-top: 0; 
+		 }
+ 
 	}
 	
 	@media only screen and (min-width:768px) and (max-width:991px){ /* M */
@@ -128,3 +139,15 @@ table a:hover { color: #454455; }
 	max-width: 270;
 }
 
+
+
+/*.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+ }*/
+
+ @media (min-width: 768px) {
+  section {
+    padding: 5rem 0;
+  }
+}
