@@ -67,11 +67,11 @@
 		function is_approval_icon($is_approval = false)
 		{
 			if($is_approval == 1){
-				echo '<i class="fas fa-check-circle fa-lg" title="Onaylı"></i>';
+				echo '<i class="fas fa-check-circle fa-lg" title="Approved"></i>';
 			}else if($is_approval == 0 OR $is_approval == NULL){
-				echo '<i class="fas fa-info-circle fa-lg" title="Onay Bekliyor"></i>';
+				echo '<i class="fas fa-info-circle fa-lg" title="Waiting for approval"></i>';
 			}else if($is_approval == 2 ){
-				echo '<i class="fas fa-times-circle fa-lg" title="Red"></i>';
+				echo '<i class="fas fa-times-circle fa-lg" title="Rejection"></i>';
 			}
  		}
 	}
