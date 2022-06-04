@@ -101,7 +101,7 @@
 						    	<li><a class="dropdown-item" href="<?=base_url("survey/open");?>" id="open_survey">Open Surveys</a></li>
 						    
 							    <?php if(is_login()){?>
-							    	<li><a class="dropdown-item" href="<?=base_url("survey/my_surveys");?>">Something else here</a></li>
+							    	<li><a class="dropdown-item" href="<?=base_url("survey/my_surveys");?>">My Surveys</a></li>
 							    <?php } ?>
 
 							    <li><a class="dropdown-item" href="<?=base_url("survey/create");?>">Create Survey</a></li>
