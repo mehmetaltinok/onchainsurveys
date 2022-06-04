@@ -21,6 +21,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="assets/onchainsurveys/css/styles.css" rel="stylesheet" />
+        <link href="assets/onchainsurveys/css/custom.css" rel="stylesheet" />
 
         <!-- Sweet ALert  -->
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -67,6 +68,8 @@
 
 		 	html .bg-color-secondary, html .bg-secondary { background: #292929 !important; }
 		 	.form-control.bg-secondary, .form-control.bg-color-secondary { color: #FFF; }
+
+		 	html .bg-color-dark, html .bg-dark { background-color: #292929 !important; }
 		 </style>
 
 
