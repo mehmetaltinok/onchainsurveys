@@ -41,7 +41,7 @@
 									<!-- <li class="nav-item"><a class="nav-link text-3" href="#">Profil</a></li> -->
 									<li class="nav-item"><a class="nav-link text-3" id="password_update" onclick="open_password_update();">Update Password</a></li>
 									<li class="nav-item"><a class="nav-link text-3" href="survey/my_surveys#table-list">My Survey</a></li>
-									<li class="nav-item"><a class="nav-link text-3" href="survey/history">Survey History  </a></li>
+									<li class="nav-item"><a class="nav-link text-3" href="survey/history#table-list">Survey History  </a></li>
 									<?php if(is_superUser()){?>
 										<li class="nav-item"><a class="nav-link text-3" href="user/userlist#list_table"> User List </a></li>
 									<?php } ?>
