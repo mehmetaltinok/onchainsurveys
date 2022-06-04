@@ -189,7 +189,7 @@
         const addQuestion = document.createElement("div");
         
          
-        addQuestion.innerHTML = `<div class="question">
+        addQuestion.innerHTML = `<div class="question mb-5 pb-5">
         <div class="float-end clear-question" onclick="clearQuestion(event);">
             <i class="fas fa-times-circle "></i>
         </div>
