@@ -12,7 +12,7 @@
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Error </h2>
                     <p>
-                    	BU ANKETİ GÖRÜNTÜLEMEYE İZNİNİZ YOKTUR
+                    	YOU ARE NOT PERMITTED TO VIEW THIS SURVEY
                     </p>
                 </div>
                 
