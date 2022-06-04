@@ -218,10 +218,15 @@ class Survey extends CI_Controller {
 
    		# approved control 
    		// onaylanmayan anketin başka kullanıcı tarafından link ile erişimini engelle
-   		if($data['item']->is_approved == 0 AND $this->session->userdata('user_id') != $data['item']->user_id){
-   			redirect(base_url('survey/error_page'),'refresh');
-   			exit;
+   		// super user değilse
+   		if(!is_superUser()){
+			if($data['item']->is_approved == 0 AND $this->session->userdata('user_id') != $data['item']->user_id){
+			   			redirect(base_url('survey/error_page'),'refresh');
+			   			exit;
+			   	}
    		}
+
+   		
  
 
 		$participated_where = [
