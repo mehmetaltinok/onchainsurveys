@@ -64,7 +64,7 @@ class User extends CI_Controller {
 
 	        }else{
 
-	        	# kullanıcı hariç, bu emaili kullanan başka kullanıcı var mı 
+	        	# Does anyone else use this email, besides the user?
 		        $email_check = $this->User_model->get([
 		        	'email' => $this->input->post('email',true),
 		        	'id !=' => $this->session->userdata('user_id'),
@@ -75,7 +75,7 @@ class User extends CI_Controller {
 		        	$result_array['error'] = true;
 		        }
 
-		        # kullanıcı hariç, bu user_name i kullanan başka kullanıcı var mı 
+		        # Is there any other user using this user_name except user
 		        $user_name_check = $this->User_model->get([
 		        	'user_name' => $this->input->post('user_name',true),
 		        	'id !=' => $this->session->userdata('user_id'),
@@ -86,7 +86,7 @@ class User extends CI_Controller {
 		        	$result_array['error'] = true;
 		        }
 
-		        # kullanıcı hariç, bu casper_key i kullanan başka kullanıcı var mı 
+		        # except user, is there any other user using this casper_key
 		        if($this->input->post('casper_key',true)){
 		        		$casper_key_check = $this->User_model->get([
 			        	'casper_key' => $this->input->post('casper_key',true),
@@ -100,7 +100,7 @@ class User extends CI_Controller {
 		        }
 		         
  
-		        #hata yoksa
+		        #if there is no error
 		        if(!@$result_array['error']){
 		        	 	
 		        	$data = [
@@ -151,16 +151,16 @@ class User extends CI_Controller {
 		// post user/login_in 
 	}
 
-	// login yap 
+	// login
 	public function login_in()
 	{
-		#formdan post edilmiş ise
+		#if it is posted from the form
 		if($this->input->method() == "post"){
 
 			$this->form_validation->set_rules('user_name','Username','trim|required');
          $this->form_validation->set_rules('password','Password','trim|required');
 
-        	 # hata varsa
+        	 # if there is an error
 	        if($this->form_validation->run() == FALSE ){
 	           $result_array = [
 	                'error'         			=> true,
@@ -213,7 +213,7 @@ class User extends CI_Controller {
 	}
 
 
-	// kayıt formu
+	// registration form
 	public function register()
 	{
 		$data['countries'] = $this->db->get('countries')->result();
@@ -225,7 +225,7 @@ class User extends CI_Controller {
 		// post user/create
 	}
 
-	// kullanıcı kayıt
+	// user registration
 	public function create()
 	{
 
@@ -238,7 +238,7 @@ class User extends CI_Controller {
         $this->form_validation->set_message('is_unique', "This {field} is used. ");
  
 
-        # hata varsa
+        # if there is an error
         if($this->form_validation->run() == FALSE ){
            $result_array = [
                 'error'         			=> true,
@@ -255,7 +255,7 @@ class User extends CI_Controller {
 
         }else{
 
-        	# form bilgilerini al
+        	# get form information
         	$formData = $this->input->post();
 
 
@@ -296,7 +296,7 @@ class User extends CI_Controller {
 	 
  
 
-	// şifremi unuttum
+	// I forgot my password
 	public function forgotPassword()
 	{
 		$this->load->view('onchainsurveys/common/header');
@@ -306,7 +306,7 @@ class User extends CI_Controller {
 		// post user/recoverPassword
 	}
 
-	// şifre unuttum post 
+	// forgot password post
 	public function recoverPassword()
 	{
 
@@ -372,7 +372,7 @@ class User extends CI_Controller {
 		}
 	}
 
-	// şifremi unuttum post
+	// forgot password post
 	public function resetPassword() 
 	{
 		
