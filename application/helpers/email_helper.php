@@ -35,7 +35,7 @@
 
  			$content = 
 
- 			'<p> Email kurtarma talebinde bulundunuz. Eğer şifrenizi kurtarmak istiyorsanız. Aşağıdaki bağlantıya tıklayınız. </p>'.
+ 			'<p> You have requested email recovery. If you want to recover your password. Click the link below. </p>'.
 
  			'<p> <a href="'.$recoverUrl.'"></a> </p>'.
 

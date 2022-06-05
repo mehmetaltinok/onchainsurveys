@@ -108,7 +108,7 @@
 
 	if(!function_exists('login_control')){
 	/**
-	 * login değilse login sayfasına yönlendirir
+	 * if not login redirects to login page
 	 * 
 	 */
 		function login_control()
@@ -122,7 +122,7 @@
 
 	if(!function_exists('is_superUser')){
 	/**
-	 *  süper admin ise true döner
+	 *  Returns true if super admin
 	 * 
 	 */
 		function is_superUser()
@@ -139,7 +139,7 @@
 	if(!function_exists('superUser_control')){
 	/**
 	 * 
-	 *  süper admin değilse logine yönlendirir
+	 *  redirects to login if not super admin
 	 */
 		function superUser_control()
 		{
@@ -152,7 +152,7 @@
 
 	if(!function_exists('is_participated')){
 	/**
-	 *  ankete katılmış ise true döner
+	 *  Returns true if participated in the survey
 	 * 
 	 */
 		function is_participated($survey_id = false)

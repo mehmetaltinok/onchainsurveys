@@ -1,7 +1,3 @@
-/***
- *  Mehmet Altınok
- * 
- * **/
 
     const lastElements = document.querySelector("#lastElements");
     //const addOptionBtn = document.querySelector("#addOptionBtn");
@@ -45,7 +41,7 @@
 
     
     /*
-		harfleri sıralar ve her işlemden sonra şıkları yeniden isimlendirir
+		sorts the letters and renames the options after each operation
     */
     function sortLetters(question){
     	const letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
@@ -82,18 +78,18 @@
         load_image.style.display="block";
 
 
-        /* tüm .form-control classına sahip olan elementleri al */ 
+        /* get elements that have all .form-control class */ 
         let elements = document.querySelectorAll(".form-control")
         //console.log(elements);
 
         elements.forEach(function(item,key){
-            /* hata durumunda eklenmiş form-error classı varsa sil */ 
+            /*If there is an added form-error class in case of error, delete it */ 
             item.parentNode.classList.remove('form-error');
-            /* boş alan kontrolü yap artı trim() ile boşluk karakteri (backspace) girilmiş ise temizle */ 
+            /* check for free space plus trim() if backspace is entered, clear it */ 
             if(item.value.trim() == ''){
-                /* hata varsa form-error classını ekle */
+                /* add form-error class if there is an error */
                 item.parentNode.classList.add('form-error');
-                /* hata varsa error değişkenini true yap */ 
+                /* If there is an error, set the error variable to true */ 
                 error = true;
             }
         });
@@ -177,7 +173,7 @@
     }
 
 
-    // anket soru ekleme, sevgi bu alanların açıklamalarını ingilize yazar mısın
+    // add a survey question
     function addQuestionBlock(e){
 
         if( typeof addQuestionBlock.counter == 'undefined' ) {
@@ -231,7 +227,7 @@
 
      
    
-      // soruyu siler
+      // delete the question
       function clearQuestion(e){
         Swal.fire({
           title: 'Are you sure?',
@@ -260,7 +256,7 @@
       }
 
 
-      // soru sayısını kontrol eder, soru sayısı 1 den küçük ise finish survey butonunu gizler değilse görünür yapar
+      // Controls the number of questions, hides the finish survey button if the number of questions is less than 1, otherwise makes it visible
       function questionControl(){
         let questions = document.querySelectorAll('.question');
         const finishSurvey = document.querySelector("#finishSurvey");
