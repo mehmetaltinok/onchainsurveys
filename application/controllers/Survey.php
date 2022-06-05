@@ -78,7 +78,7 @@ class Survey extends CI_Controller {
 	// create survey form
 	public function create()
 	{
-		#login ve yetki kontrol
+		#login and authorization check
 		login_control();
 
 		$this->load->view('onchainsurveys/common/header');
@@ -89,7 +89,7 @@ class Survey extends CI_Controller {
 	// survey save
 	public function save()
 	{
- 		#login ve yetki kontrol
+ 		#login and authorization check
 		login_control();
 
 		sleep(1);
@@ -184,7 +184,7 @@ class Survey extends CI_Controller {
 	//  my surveys
 	public function my_surveys()
 	{
-		#login ve yetki kontrol
+		#login and authorization check
 		login_control();
  
 		$data['list'] = $this->Survey_model->getAll([
@@ -217,8 +217,8 @@ class Survey extends CI_Controller {
    		}
 
    		# approved control 
-   		// onaylanmayan anketin başka kullanıcı tarafından link ile erişimini engelle
-   		// super user değilse
+   		// prevent unapproved survey from being accessed by another user with a link
+   		// if not superuser
    		if(!is_superUser()){
 			if($data['item']->is_approved == 0 AND $this->session->userdata('user_id') != $data['item']->user_id){
 			   			redirect(base_url('survey/error_page'),'refresh');
@@ -241,7 +241,7 @@ class Survey extends CI_Controller {
 
     	$data['title'] = 'Survey Details';
 
- 	  	#kullanıcı ankete oy vermiş mi
+ 	  	#Has the user voted in the poll?
  		if($participated){
  			$data['$participated'] = true;
   			$data['list'] = $this->db
@@ -285,7 +285,7 @@ class Survey extends CI_Controller {
 	// vote 
 	public function survey_vote($survey_id = false)
 	{
-		#login ve yetki kontrol
+		#login and authorization check
 		login_control();
 
   		sleep(1);
@@ -524,7 +524,7 @@ class Survey extends CI_Controller {
 	// history - participated survey 
 	public function history()
 	{
-		#login ve yetki kontrol
+		#login and authorization check
 		login_control();
 		
 		$this->db->select('*,s.user_id as create_user_id',false);  
