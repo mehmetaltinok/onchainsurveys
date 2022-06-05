@@ -106,6 +106,13 @@ http://localhost/your_proje_file_name
 
 example file name onchainsurveys  
  
+### cypress test
+```
+npm install cypress
+npm install cypress --save-dev
+
+npx cypress open
+```
 
 ## Login 
 ```
